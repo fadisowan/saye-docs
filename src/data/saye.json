@@ -33,8 +33,8 @@
       "id": "sy_t_identity",
       "title": "الألوان والوضع الداكن",
       "order": 1,
-      "summary": "ألوان جاهزة أو ألوانك، والوضع الداكن، والزوايا، وتعتيم الصور.",
-      "scope": "كل الصفحات · 12 خياراً",
+      "summary": "ألوان جاهزة أو ألوانك، والوضع الداكن، والزوايا، وحجم الأزرار، وتعتيم الصور.",
+      "scope": "كل الصفحات · 13 خياراً",
       "settings": [
         {
           "id": "default_theme_mode",
@@ -208,6 +208,28 @@
           "default": "دائرية: أزرار كبسولة"
         },
         {
+          "id": "button_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم الأزرار",
+          "description": "أزرار الأقسام والصفحات. شكلها من «استدارة الزوايا».",
+          "options": [
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            }
+          ],
+          "default": "متوسط"
+        },
+        {
           "id": "photo_shade",
           "type": "items",
           "format": "dropdown-list",
@@ -235,8 +257,8 @@
       "id": "sy_t_type",
       "title": "الخطوط واسم المتجر",
       "order": 2,
-      "summary": "خطوط الزينة، وشكل عناوين الأقسام، واسم المتجر.",
-      "scope": "كل الصفحات · 7 خيارات",
+      "summary": "خطوط الزينة، وشكل عناوين الأقسام وأحجامها، واسم المتجر.",
+      "scope": "كل الصفحات · 9 خيارات",
       "settings": [
         {
           "id": "typography_preset",
@@ -290,6 +312,50 @@
             }
           ],
           "default": "سطر إنجليزي صغير يسبقه خط"
+        },
+        {
+          "id": "heading_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم عناوين الأقسام",
+          "description": "عناوين أقسام الرئيسية وعناوين الصفحات. ولكل قسم حجمه الخاص في إعداداته.",
+          "options": [
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            }
+          ],
+          "default": "متوسط"
+        },
+        {
+          "id": "text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم نصوص الأقسام",
+          "description": "الأسطر تحت العناوين ونصوص الأقسام. ولكل قسم حجمه الخاص في إعداداته.",
+          "options": [
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            }
+          ],
+          "default": "متوسط"
         },
         {
           "id": "logo_ruqaa",
@@ -661,7 +727,7 @@
             },
             {
               "value": "classic",
-              "label": "الأتيليه: الشعار والروابط وقائمة كبيرة لكل قسم"
+              "label": "الأتيليه: الشعار والروابط وميجا مينو لكل قسم"
             }
           ],
           "default": "شريط بعرض الصفحة"
@@ -685,19 +751,19 @@
           "id": "submenu_type",
           "type": "items",
           "format": "dropdown-list",
-          "label": "نوع القوائم الفرعية",
-          "description": "للأتيليه فقط، على الحاسوب: ما يفتحه القسم الذي له فروع. الكبيرة لوحة بعرض الشاشة بالأعمدة والصور، والمنسدلة أسماء الفروع تحت الرابط.",
+          "label": "الأتيليه: نوع القوائم الفرعية",
+          "description": "للأتيليه فقط، على الحاسوب: ما يفتحه القسم الذي له فروع. الميجا مينو لوحة بالأعمدة والصور، والمنسدلة أسماء الفروع تحت الرابط.",
           "options": [
             {
               "value": "mega",
-              "label": "قائمة كبيرة"
+              "label": "ميجا مينو: لوحة بالأعمدة والصور"
             },
             {
               "value": "simple",
               "label": "قائمة منسدلة بسيطة"
             }
           ],
-          "default": "قائمة كبيرة",
+          "default": "ميجا مينو: لوحة بالأعمدة والصور",
           "conditions": [
             {
               "id": "header_style",
@@ -710,12 +776,12 @@
           "id": "capsule_submenu_type",
           "type": "items",
           "format": "dropdown-list",
-          "label": "نوع القوائم الفرعية",
-          "description": "للكبسولة مع الروابط فقط، على الحاسوب. الكبيرة بإعدادات القائمة الكبيرة للأتيليه (تظهر عند اختيار الأتيليه).",
+          "label": "الكبسولة: نوع القوائم الفرعية",
+          "description": "للكبسولة مع الروابط فقط، على الحاسوب. الميجا مينو بإعدادات الميجا مينو للأتيليه (تظهر عند اختيار الأتيليه).",
           "options": [
             {
               "value": "mega",
-              "label": "قائمة كبيرة"
+              "label": "ميجا مينو: لوحة بالأعمدة والصور"
             },
             {
               "value": "simple",
@@ -762,8 +828,8 @@
           "id": "mega_columns",
           "type": "items",
           "format": "dropdown-list",
-          "label": "القائمة الكبيرة: عدد الأعمدة",
-          "description": "في القائمة الكبيرة للأتيليه فقط. ما زاد ينزل لسطر جديد.",
+          "label": "الميجا مينو: عدد الأعمدة",
+          "description": "في الميجا مينو للأتيليه فقط. ما زاد ينزل لسطر جديد.",
           "options": [
             {
               "value": "auto",
@@ -800,8 +866,8 @@
           "id": "mega_item_products",
           "type": "boolean",
           "format": "switch",
-          "label": "منتجات التصنيف في القائمة الكبيرة",
-          "description": "في القائمة الكبيرة للأتيليه فقط: لرابط تصنيف بلا فروع في قائمة سلة، 4 من منتجاته وفروعه بجانبها، تُطلب عند أول فتح. والمنتجات التي تختارها للرابط في سلة أسفل قائمته.",
+          "label": "منتجات التصنيف في الميجا مينو",
+          "description": "في الميجا مينو للأتيليه فقط: لرابط تصنيف بلا فروع في قائمة سلة، 4 من منتجاته وفروعه بجانبها، تُطلب عند أول فتح. والمنتجات التي تختارها للرابط في سلة أسفل قائمته.",
           "default": true,
           "conditions": [
             {
@@ -820,8 +886,8 @@
           "id": "h3_auto_subs_limit",
           "type": "number",
           "format": "integer",
-          "label": "القائمة الكبيرة: عدد فروع التصنيف",
-          "description": "في القائمة الكبيرة للأتيليه فقط: لرابط تصنيف بلا فروع، فروعه من سلة بجانب منتجاته أو كبلاطات صور.",
+          "label": "الميجا مينو: عدد فروع التصنيف",
+          "description": "في الميجا مينو للأتيليه فقط: لرابط تصنيف بلا فروع، فروعه من سلة بجانب منتجاته أو كبلاطات صور.",
           "default": 5,
           "min": 3,
           "max": 8,
@@ -843,7 +909,7 @@
           "type": "string",
           "format": "image",
           "label": "بطاقة الترويج: صورة",
-          "description": "في القائمة الكبيرة للأتيليه فقط، ويحتاج تصنيفاً في «بطاقة ترويج في القائمة: التصنيف» (مجموعة القائمة). فارغ = صورة التصنيف.",
+          "description": "في الميجا مينو للأتيليه فقط، ويحتاج تصنيفاً في «بطاقة ترويج في القائمة: التصنيف» (مجموعة القائمة). فارغ = صورة التصنيف.",
           "conditions": [
             {
               "id": "header_style",
@@ -862,7 +928,7 @@
           "type": "string",
           "format": "text",
           "label": "بطاقة الترويج: سطر تحت الاسم",
-          "description": "في القائمة الكبيرة للأتيليه فقط، ويحتاج تصنيفاً للبطاقة. فارغ = لا يظهر.",
+          "description": "في الميجا مينو للأتيليه فقط، ويحتاج تصنيفاً للبطاقة. فارغ = لا يظهر.",
           "default": "",
           "maxLength": 40,
           "multilanguage": true,
@@ -883,9 +949,9 @@
           "id": "h3_quick_chips",
           "type": "items",
           "format": "dropdown-list",
-          "label": "القائمة الكبيرة: روابط سريعة أسفلها",
+          "label": "الميجا مينو: روابط سريعة أسفلها",
           "source": "categories",
-          "description": "في القائمة الكبيرة للأتيليه فقط: تصنيفات تختارها، كبسولات أسفل كل لوحة بأسمائها في سلة. فارغ = لا روابط.",
+          "description": "في الميجا مينو للأتيليه فقط: تصنيفات تختارها، كبسولات أسفل كل لوحة بأسمائها في سلة. فارغ = لا روابط.",
           "multi": true,
           "conditions": [
             {
@@ -1021,7 +1087,7 @@
           "format": "dropdown-list",
           "label": "بطاقة ترويج في القائمة: التصنيف",
           "source": "categories",
-          "description": "صورة التصنيف واسمه، في اللوحة الجانبية وفي القائمة الكبيرة لهيدر الأتيليه. فارغ = لا بطاقة."
+          "description": "صورة التصنيف واسمه، في اللوحة الجانبية وفي الميجا مينو لهيدر الأتيليه. فارغ = لا بطاقة."
         },
         {
           "id": "menu_promo_latin",
@@ -1043,7 +1109,7 @@
           "type": "boolean",
           "format": "switch",
           "label": "صورة التصنيف بجانب القائمة",
-          "description": "في القائمة الكبيرة وبجانب القائمة.",
+          "description": "في الميجا مينو وبجانب القائمة.",
           "default": true
         }
       ]
@@ -2639,61 +2705,11 @@
           "default": "صورة كاملة بعرض الشاشة"
         },
         {
-          "id": "panels_scene_badge",
-          "type": "boolean",
-          "format": "switch",
-          "label": "اسم المشهد على اللوحة المفتوحة",
-          "description": "في شكل اللوحات فقط.",
-          "default": true
-        },
-        {
-          "id": "autoplay_seconds",
-          "type": "number",
-          "format": "integer",
-          "label": "مدة كل شريحة (ثانية)",
-          "description": "الانتقال للشريحة التالية تلقائياً.",
-          "default": 7,
-          "min": 3,
-          "max": 20
-        },
-        {
-          "id": "pause_on_hover",
-          "type": "boolean",
-          "format": "switch",
-          "label": "إيقاف مؤقت عند مرور المؤشر على الصورة",
-          "description": "على الحاسوب.",
-          "default": true
-        },
-        {
-          "id": "scroll_fade",
-          "type": "boolean",
-          "format": "switch",
-          "label": "تلاشي الواجهة مع التمرير",
-          "description": "في شكل «صورة كاملة» فقط.",
-          "default": true
-        },
-        {
-          "id": "scroll_slides",
-          "type": "boolean",
-          "format": "switch",
-          "label": "تقليب الشرائح بالتمرير",
-          "description": "تثبت الواجهة وينقل التمرير الشرائح.",
-          "default": false,
-          "conditions": [
-            {
-              "id": "hero_style",
-              "op": "=",
-              "value": "cinematic"
-            }
-          ]
-        },
-        {
-          "id": "show_product_chip",
-          "type": "boolean",
-          "format": "switch",
-          "label": "بطاقة منتج صغيرة على الصورة",
-          "description": "في «نص بجانب صورة». المنتج من كل شريحة.",
-          "default": true
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "cta_primary_label",
@@ -2963,6 +2979,197 @@
               "maxLength": 40
             }
           ]
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "panels_scene_badge",
+          "type": "boolean",
+          "format": "switch",
+          "label": "اسم المشهد على اللوحة المفتوحة",
+          "description": "في شكل اللوحات فقط.",
+          "default": true
+        },
+        {
+          "id": "show_product_chip",
+          "type": "boolean",
+          "format": "switch",
+          "label": "بطاقة منتج صغيرة على الصورة",
+          "description": "في «نص بجانب صورة». المنتج من كل شريحة.",
+          "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 92,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 17,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_btn_shape",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "شكل الزر",
+          "description": "«حسب المتجر»: استدارة الزوايا في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "soft",
+              "label": "دائرية: كبسولة"
+            },
+            {
+              "value": "medium",
+              "label": "مستديرة قليلاً"
+            },
+            {
+              "value": "sharp",
+              "label": "شبه حادّة"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "autoplay_seconds",
+          "type": "number",
+          "format": "integer",
+          "label": "مدة كل شريحة (ثانية)",
+          "description": "الانتقال للشريحة التالية تلقائياً.",
+          "default": 7,
+          "min": 3,
+          "max": 20
+        },
+        {
+          "id": "pause_on_hover",
+          "type": "boolean",
+          "format": "switch",
+          "label": "إيقاف مؤقت عند مرور المؤشر على الصورة",
+          "description": "على الحاسوب.",
+          "default": true
+        },
+        {
+          "id": "scroll_fade",
+          "type": "boolean",
+          "format": "switch",
+          "label": "تلاشي الواجهة مع التمرير",
+          "description": "في شكل «صورة كاملة» فقط.",
+          "default": true
+        },
+        {
+          "id": "scroll_slides",
+          "type": "boolean",
+          "format": "switch",
+          "label": "تقليب الشرائح بالتمرير",
+          "description": "تثبت الواجهة وينقل التمرير الشرائح.",
+          "default": false,
+          "conditions": [
+            {
+              "id": "hero_style",
+              "op": "=",
+              "value": "cinematic"
+            }
+          ]
         }
       ]
     },
@@ -2995,6 +3202,13 @@
             }
           ],
           "default": "كلمات كبيرة بينها نجمة"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "items",
@@ -3146,6 +3360,67 @@
           ]
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 34,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
           "id": "speed_seconds",
           "type": "number",
           "format": "integer",
@@ -3211,6 +3486,13 @@
             }
           ],
           "default": "صورة تتوسّع مع التمرير"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "manifesto_text",
@@ -3312,6 +3594,114 @@
           ]
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 110,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 49,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
           "id": "scroll_length",
           "type": "number",
           "format": "integer",
@@ -3360,6 +3750,13 @@
             }
           ],
           "default": "بطاقات طويلة تنزلق مع التمرير"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "eyebrow",
@@ -3530,11 +3927,65 @@
           ]
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
           "id": "show_counts",
           "type": "boolean",
           "format": "switch",
           "label": "عدد المنتجات على كل بطاقة",
           "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -3569,22 +4020,11 @@
           "default": "شبكة 4 منتجات في الصف"
         },
         {
-          "id": "section_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "description": "لوحة فاتحة: مساحة بلون ثانٍ.",
-          "options": [
-            {
-              "value": "none",
-              "label": "بلا خلفية"
-            },
-            {
-              "value": "panel",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            }
-          ],
-          "default": "بلا خلفية"
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "featured_product",
@@ -3722,13 +4162,6 @@
           "max": 16
         },
         {
-          "id": "show_tabs",
-          "type": "boolean",
-          "format": "switch",
-          "label": "تبويبات التصنيفات فوق المنتجات",
-          "default": true
-        },
-        {
           "id": "tabs",
           "type": "collection",
           "format": "collection",
@@ -3773,6 +4206,85 @@
               "label": "التصنيف",
               "source": "categories",
               "description": "فارغ = كل المنتجات."
+            }
+          ]
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "section_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "description": "لوحة فاتحة: مساحة بلون ثانٍ.",
+          "options": [
+            {
+              "value": "none",
+              "label": "بلا خلفية"
+            },
+            {
+              "value": "panel",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            }
+          ],
+          "default": "بلا خلفية"
+        },
+        {
+          "id": "show_tabs",
+          "type": "boolean",
+          "format": "switch",
+          "label": "تبويبات التصنيفات فوق المنتجات",
+          "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
             }
           ]
         },
@@ -3862,58 +4374,11 @@
           "default": "ميزون: قطع مفرّغة على رف بوتيك"
         },
         {
-          "id": "rack_background",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "description": "في «رف بعلّاقات».",
-          "options": [
-            {
-              "value": "none",
-              "label": "بلا خلفية"
-            },
-            {
-              "value": "panel",
-              "label": "لوحة فاتحة"
-            }
-          ],
-          "default": "بلا خلفية",
-          "conditions": [
-            {
-              "id": "layout",
-              "op": "=",
-              "value": "rack"
-            }
-          ]
-        },
-        {
-          "id": "cutout_image",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "الصورة المفرّغة من صور المنتج",
-          "description": "PNG أو WebP شفافة ضمن صور المنتج، بالارتفاع نفسه.",
-          "options": [
-            {
-              "value": "last",
-              "label": "آخر صورة"
-            },
-            {
-              "value": "second",
-              "label": "الصورة الثانية"
-            },
-            {
-              "value": "first",
-              "label": "الصورة الأولى (الرئيسية)"
-            }
-          ],
-          "default": "آخر صورة",
-          "conditions": [
-            {
-              "id": "layout",
-              "op": "=",
-              "value": "maison"
-            }
-          ]
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "eyebrow",
@@ -4044,24 +4509,6 @@
           "max": 30
         },
         {
-          "id": "start_index",
-          "type": "number",
-          "format": "integer",
-          "label": "المنتج المختار عند البداية",
-          "description": "رقم ترتيبه على الرف، من 1.",
-          "default": 3,
-          "min": 1,
-          "max": 30
-        },
-        {
-          "id": "show_filters",
-          "type": "boolean",
-          "format": "switch",
-          "label": "تبويبات التصنيفات",
-          "description": "حين تكون «تبويبات التصفية» فارغة.",
-          "default": true
-        },
-        {
           "id": "filter_tabs",
           "type": "collection",
           "format": "collection",
@@ -4095,22 +4542,6 @@
               "description": "ومنتجاته في التبويب أيضاً."
             }
           ]
-        },
-        {
-          "id": "show_price_tags",
-          "type": "boolean",
-          "format": "switch",
-          "label": "بطاقات السعر المعلّقة",
-          "description": "على القطعة البارزة.",
-          "default": true
-        },
-        {
-          "id": "show_info_strip",
-          "type": "boolean",
-          "format": "switch",
-          "label": "شريط التفاصيل تحت الرف",
-          "description": "الاسم والسعر والمنتج المكمّل وزر الإضافة.",
-          "default": true
         },
         {
           "id": "pairing",
@@ -4162,6 +4593,202 @@
           "default": "عرض العباية",
           "maxLength": 30,
           "multilanguage": true
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "rack_background",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "description": "في «رف بعلّاقات».",
+          "options": [
+            {
+              "value": "none",
+              "label": "بلا خلفية"
+            },
+            {
+              "value": "panel",
+              "label": "لوحة فاتحة"
+            }
+          ],
+          "default": "بلا خلفية",
+          "conditions": [
+            {
+              "id": "layout",
+              "op": "=",
+              "value": "rack"
+            }
+          ]
+        },
+        {
+          "id": "cutout_image",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "الصورة المفرّغة من صور المنتج",
+          "description": "PNG أو WebP شفافة ضمن صور المنتج، بالارتفاع نفسه.",
+          "options": [
+            {
+              "value": "last",
+              "label": "آخر صورة"
+            },
+            {
+              "value": "second",
+              "label": "الصورة الثانية"
+            },
+            {
+              "value": "first",
+              "label": "الصورة الأولى (الرئيسية)"
+            }
+          ],
+          "default": "آخر صورة",
+          "conditions": [
+            {
+              "id": "layout",
+              "op": "=",
+              "value": "maison"
+            }
+          ]
+        },
+        {
+          "id": "show_filters",
+          "type": "boolean",
+          "format": "switch",
+          "label": "تبويبات التصنيفات",
+          "description": "حين تكون «تبويبات التصفية» فارغة.",
+          "default": true
+        },
+        {
+          "id": "show_price_tags",
+          "type": "boolean",
+          "format": "switch",
+          "label": "بطاقات السعر المعلّقة",
+          "description": "على القطعة البارزة.",
+          "default": true
+        },
+        {
+          "id": "show_info_strip",
+          "type": "boolean",
+          "format": "switch",
+          "label": "شريط التفاصيل تحت الرف",
+          "description": "الاسم والسعر والمنتج المكمّل وزر الإضافة.",
+          "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "start_index",
+          "type": "number",
+          "format": "integer",
+          "label": "المنتج المختار عند البداية",
+          "description": "رقم ترتيبه على الرف، من 1.",
+          "default": 3,
+          "min": 1,
+          "max": 30
         },
         {
           "id": "maison_t",
@@ -4413,6 +5040,13 @@
           "default": "بطاقات تتكدّس مع التمرير"
         },
         {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
+        },
+        {
           "id": "eyebrow",
           "type": "string",
           "format": "text",
@@ -4619,11 +5253,112 @@
           ]
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
           "id": "show_steps",
           "type": "boolean",
           "format": "switch",
           "label": "أشرطة تقدّم تبيّن اللحظة الحالية",
           "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -4656,6 +5391,13 @@
             }
           ],
           "default": "بنر بجانب سلايدر منتجات"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "eyebrow",
@@ -4741,23 +5483,6 @@
           "type": "items",
           "format": "variable-list",
           "label": "رابط زر البنر"
-        },
-        {
-          "id": "banner_side",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "مكان البنر",
-          "options": [
-            {
-              "value": "start",
-              "label": "بداية السطر (يمين العربية)"
-            },
-            {
-              "value": "end",
-              "label": "نهاية السطر"
-            }
-          ],
-          "default": "بداية السطر (يمين العربية)"
         },
         {
           "id": "source",
@@ -4851,12 +5576,148 @@
           "max": 12
         },
         {
-          "id": "drag",
-          "type": "boolean",
-          "format": "switch",
-          "label": "سحب السلايدر بالمؤشر",
-          "description": "على الحاسوب.",
-          "default": true
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "banner_side",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "مكان البنر",
+          "options": [
+            {
+              "value": "start",
+              "label": "بداية السطر (يمين العربية)"
+            },
+            {
+              "value": "end",
+              "label": "نهاية السطر"
+            }
+          ],
+          "default": "بداية السطر (يمين العربية)"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_btn_shape",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "شكل الزر",
+          "description": "«حسب المتجر»: استدارة الزوايا في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "soft",
+              "label": "دائرية: كبسولة"
+            },
+            {
+              "value": "medium",
+              "label": "مستديرة قليلاً"
+            },
+            {
+              "value": "sharp",
+              "label": "شبه حادّة"
+            }
+          ],
+          "default": "حسب المتجر"
         },
         {
           "id": "card_t",
@@ -4906,6 +5767,21 @@
             }
           ],
           "default": "حسب إعداد المتجر"
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "drag",
+          "type": "boolean",
+          "format": "switch",
+          "label": "سحب السلايدر بالمؤشر",
+          "description": "على الحاسوب.",
+          "default": true
         }
       ]
     },
@@ -4940,22 +5816,11 @@
           "default": "صف قصص يتحرك تلقائياً"
         },
         {
-          "id": "section_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "description": "لوحة فاتحة: مساحة بلون ثانٍ.",
-          "options": [
-            {
-              "value": "none",
-              "label": "بلا خلفية"
-            },
-            {
-              "value": "panel",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            }
-          ],
-          "default": "بلا خلفية"
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "eyebrow",
@@ -5186,6 +6051,139 @@
           ]
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "section_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "description": "لوحة فاتحة: مساحة بلون ثانٍ.",
+          "options": [
+            {
+              "value": "none",
+              "label": "بلا خلفية"
+            },
+            {
+              "value": "panel",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            }
+          ],
+          "default": "بلا خلفية"
+        },
+        {
+          "id": "show_arrows",
+          "type": "boolean",
+          "format": "switch",
+          "label": "أسهم التنقل وشريط التقدّم",
+          "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
           "id": "autoplay_row",
           "type": "boolean",
           "format": "switch",
@@ -5200,13 +6198,6 @@
           "default": 3,
           "min": 2,
           "max": 10
-        },
-        {
-          "id": "show_arrows",
-          "type": "boolean",
-          "format": "switch",
-          "label": "أسهم التنقل وشريط التقدّم",
-          "default": true
         },
         {
           "id": "story_seconds",
@@ -5248,6 +6239,13 @@
             }
           ],
           "default": "بطاقات مقالات (الأولى أعرض)"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "eyebrow",
@@ -5302,6 +6300,107 @@
           "default": 5,
           "min": 3,
           "max": 6
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -5333,6 +6432,13 @@
             }
           ],
           "default": "شريط بين خطين"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "items",
@@ -5414,6 +6520,107 @@
               "multilanguage": true
             }
           ]
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 16,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 13,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -5428,6 +6635,13 @@
           "format": "title",
           "label": "منتجات العرض بجانب عدّاد تنازلي.",
           "value": "منتجات العرض بجانب عدّاد تنازلي."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "fs_eyebrow",
@@ -5466,51 +6680,6 @@
           "default": "منتجات مخفّضة لفترة محدودة.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "fs_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "fs_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "fs_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "fs_source",
@@ -5612,21 +6781,73 @@
           "maxLength": 20
         },
         {
-          "id": "fs_end_mode",
+          "id": "fs_cta_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر بجانب العدّاد",
+          "description": "يظهر حين يُختار له رابط.",
+          "default": "كل العروض",
+          "maxLength": 25,
+          "multilanguage": true
+        },
+        {
+          "id": "fs_cta_link",
+          "type": "items",
+          "format": "variable-list",
+          "label": "رابط الزر",
+          "description": "فارغ = لا زر."
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "fs_bg",
           "type": "items",
           "format": "dropdown-list",
-          "label": "بعد انتهاء العدّاد",
+          "label": "خلفية القسم",
           "options": [
             {
-              "value": "hide",
-              "label": "يختفي القسم"
+              "value": "default",
+              "label": "خلفية الصفحة"
             },
             {
-              "value": "ended",
-              "label": "تبقى المنتجات مع «انتهى العرض»"
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
             }
           ],
-          "default": "يختفي القسم"
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "fs_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "fs_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
         },
         {
           "id": "fs_units",
@@ -5646,21 +6867,122 @@
           "default": "ساعات ودقائق وثوانٍ"
         },
         {
-          "id": "fs_cta_text",
-          "type": "string",
-          "format": "text",
-          "label": "نص الزر بجانب العدّاد",
-          "description": "يظهر حين يُختار له رابط.",
-          "default": "كل العروض",
-          "maxLength": 25,
-          "multilanguage": true
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
         },
         {
-          "id": "fs_cta_link",
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
           "type": "items",
-          "format": "variable-list",
-          "label": "رابط الزر",
-          "description": "فارغ = لا زر."
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "fs_end_mode",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "بعد انتهاء العدّاد",
+          "options": [
+            {
+              "value": "hide",
+              "label": "يختفي القسم"
+            },
+            {
+              "value": "ended",
+              "label": "تبقى المنتجات مع «انتهى العرض»"
+            }
+          ],
+          "default": "يختفي القسم"
         }
       ]
     },
@@ -5675,6 +6997,35 @@
           "format": "title",
           "label": "حتى 3 بنرات بصور. بنر بلا صورة لا يظهر.",
           "value": "حتى 3 بنرات بصور. بنر بلا صورة لا يظهر."
+        },
+        {
+          "id": "pb_layout",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "طريقة العرض",
+          "description": "على الجوال: كل البنرات عمود واحد.",
+          "options": [
+            {
+              "value": "trio",
+              "label": "3 بنرات متساوية"
+            },
+            {
+              "value": "wide",
+              "label": "بنر كبير بجانب اثنين"
+            },
+            {
+              "value": "split",
+              "label": "بنر عريض فوق اثنين"
+            }
+          ],
+          "default": "3 بنرات متساوية"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "pb_eyebrow",
@@ -5713,73 +7064,6 @@
           "default": "عروض مختارة من المتجر.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "pb_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "pb_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "pb_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
-        },
-        {
-          "id": "pb_layout",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "طريقة العرض",
-          "description": "على الجوال: كل البنرات عمود واحد.",
-          "options": [
-            {
-              "value": "trio",
-              "label": "3 بنرات متساوية"
-            },
-            {
-              "value": "wide",
-              "label": "بنر كبير بجانب اثنين"
-            },
-            {
-              "value": "split",
-              "label": "بنر عريض فوق اثنين"
-            }
-          ],
-          "default": "3 بنرات متساوية"
         },
         {
           "id": "pb_banners",
@@ -5913,6 +7197,159 @@
           ]
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "pb_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "pb_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "pb_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
           "id": "pb_zoom",
           "type": "boolean",
           "format": "switch",
@@ -5932,6 +7369,13 @@
           "format": "title",
           "label": "أسئلة وأجوبة تُفتح واحداً واحداً. سؤال بلا جواب لا يظهر.",
           "value": "أسئلة وأجوبة تُفتح واحداً واحداً. سؤال بلا جواب لا يظهر."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "fq_eyebrow",
@@ -5970,6 +7414,53 @@
           "default": "إجابات للأسئلة المتكررة.",
           "maxLength": 220,
           "multilanguage": true
+        },
+        {
+          "id": "fq_items",
+          "type": "collection",
+          "format": "collection",
+          "label": "الأسئلة",
+          "description": "الجواب نص عادي. سؤال بلا جواب لا يظهر.",
+          "default": [
+            {
+              "fq_items.q": "كيف أختار المقاس المناسب؟",
+              "fq_items.a": "راجع جدول المقاسات في صفحة المنتج، أو تواصل معنا."
+            },
+            {
+              "fq_items.q": "متى يصل طلبي؟",
+              "fq_items.a": "تظهر مدة التوصيل عند إتمام الطلب، وتتابع حالته من حسابك."
+            },
+            {
+              "fq_items.q": "كيف أستبدل منتجاً أو أرجعه؟",
+              "fq_items.a": "راجع سياسة الاستبدال والاسترجاع في صفحات المتجر، أو تواصل معنا."
+            }
+          ],
+          "maxLength": 15,
+          "fields": [
+            {
+              "id": "fq_items.q",
+              "type": "string",
+              "format": "text",
+              "label": "السؤال",
+              "maxLength": 80,
+              "multilanguage": true
+            },
+            {
+              "id": "fq_items.a",
+              "type": "string",
+              "format": "textarea",
+              "label": "الجواب",
+              "maxLength": 600,
+              "multilanguage": true
+            }
+          ]
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
         },
         {
           "id": "fq_bg",
@@ -6017,61 +7508,6 @@
           "default": true
         },
         {
-          "id": "fq_items",
-          "type": "collection",
-          "format": "collection",
-          "label": "الأسئلة",
-          "description": "الجواب نص عادي. سؤال بلا جواب لا يظهر.",
-          "default": [
-            {
-              "fq_items.q": "كيف أختار المقاس المناسب؟",
-              "fq_items.a": "راجع جدول المقاسات في صفحة المنتج، أو تواصل معنا."
-            },
-            {
-              "fq_items.q": "متى يصل طلبي؟",
-              "fq_items.a": "تظهر مدة التوصيل عند إتمام الطلب، وتتابع حالته من حسابك."
-            },
-            {
-              "fq_items.q": "كيف أستبدل منتجاً أو أرجعه؟",
-              "fq_items.a": "راجع سياسة الاستبدال والاسترجاع في صفحات المتجر، أو تواصل معنا."
-            }
-          ],
-          "maxLength": 15,
-          "fields": [
-            {
-              "id": "fq_items.q",
-              "type": "string",
-              "format": "text",
-              "label": "السؤال",
-              "maxLength": 80,
-              "multilanguage": true
-            },
-            {
-              "id": "fq_items.a",
-              "type": "string",
-              "format": "textarea",
-              "label": "الجواب",
-              "maxLength": 600,
-              "multilanguage": true
-            }
-          ]
-        },
-        {
-          "id": "fq_open_first",
-          "type": "boolean",
-          "format": "switch",
-          "label": "أول سؤال مفتوح عند ظهور القسم",
-          "default": true
-        },
-        {
-          "id": "fq_schema",
-          "type": "boolean",
-          "format": "switch",
-          "label": "صيغة تقرؤها محركات البحث",
-          "description": "بعد كتابة أجوبة حقيقية.",
-          "default": false
-        },
-        {
           "id": "fq_side",
           "type": "items",
           "format": "dropdown-list",
@@ -6092,6 +7528,122 @@
             }
           ],
           "default": "بلا عمود جانبي"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "fq_open_first",
+          "type": "boolean",
+          "format": "switch",
+          "label": "أول سؤال مفتوح عند ظهور القسم",
+          "default": true
+        },
+        {
+          "id": "fq_schema",
+          "type": "boolean",
+          "format": "switch",
+          "label": "صيغة تقرؤها محركات البحث",
+          "description": "بعد كتابة أجوبة حقيقية.",
+          "default": false
         }
       ]
     },
@@ -6106,6 +7658,13 @@
           "format": "title",
           "label": "زر إلى طلبات العميل، أو رقم الطلب عبر واتساب.",
           "value": "زر إلى طلبات العميل، أو رقم الطلب عبر واتساب."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "ot_eyebrow",
@@ -6144,6 +7703,40 @@
           "default": "تابع حالة طلبك وشحنته.",
           "maxLength": 220,
           "multilanguage": true
+        },
+        {
+          "id": "ot_placeholder",
+          "type": "string",
+          "format": "text",
+          "label": "النص داخل حقل رقم الطلب",
+          "description": "في طريقة واتساب.",
+          "default": "رقم الطلب",
+          "maxLength": 40,
+          "multilanguage": true
+        },
+        {
+          "id": "ot_button",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "description": "فارغ = «الطلبات» أو «تتبع الطلب».",
+          "maxLength": 15,
+          "multilanguage": true
+        },
+        {
+          "id": "ot_whatsapp",
+          "type": "string",
+          "format": "text",
+          "label": "رقم واتساب بالصيغة الدولية بلا +",
+          "description": "فارغ = رقم واتساب العام.",
+          "maxLength": 20
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
         },
         {
           "id": "ot_bg",
@@ -6191,23 +7784,105 @@
           "default": true
         },
         {
-          "id": "ot_placeholder",
-          "type": "string",
-          "format": "text",
-          "label": "النص داخل حقل رقم الطلب",
-          "description": "في طريقة واتساب.",
-          "default": "رقم الطلب",
-          "maxLength": 40,
-          "multilanguage": true
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
         },
         {
-          "id": "ot_button",
-          "type": "string",
-          "format": "text",
-          "label": "نص الزر",
-          "description": "فارغ = «الطلبات» أو «تتبع الطلب».",
-          "maxLength": 15,
-          "multilanguage": true
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
         },
         {
           "id": "ot_mode",
@@ -6226,14 +7901,6 @@
             }
           ],
           "default": "طلبات العميل في حسابه في سلة"
-        },
-        {
-          "id": "ot_whatsapp",
-          "type": "string",
-          "format": "text",
-          "label": "رقم واتساب بالصيغة الدولية بلا +",
-          "description": "فارغ = رقم واتساب العام.",
-          "maxLength": 20
         }
       ]
     },
@@ -6248,6 +7915,30 @@
           "format": "title",
           "label": "تقييمات المتجر من سلة، أو آراء تكتبها.",
           "value": "تقييمات المتجر من سلة، أو آراء تكتبها."
+        },
+        {
+          "id": "ts_layout",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "طريقة العرض",
+          "options": [
+            {
+              "value": "marquee",
+              "label": "شريط يتحرك"
+            },
+            {
+              "value": "photo_grid",
+              "label": "شبكة بالصور"
+            }
+          ],
+          "default": "شريط يتحرك"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "ts_eyebrow",
@@ -6286,68 +7977,6 @@
           "default": "ما يقوله العملاء عن المتجر.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "ts_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "ts_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "ts_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
-        },
-        {
-          "id": "ts_layout",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "طريقة العرض",
-          "options": [
-            {
-              "value": "marquee",
-              "label": "شريط يتحرك"
-            },
-            {
-              "value": "photo_grid",
-              "label": "شبكة بالصور"
-            }
-          ],
-          "default": "شريط يتحرك"
         },
         {
           "id": "ts_source",
@@ -6438,14 +8067,56 @@
           ]
         },
         {
-          "id": "ts_speed",
-          "type": "number",
-          "format": "integer",
-          "label": "مدة دورة الشريط (ثانية)",
-          "description": "أقل = أسرع. يتوقف مع «تقليل الحركة».",
-          "default": 60,
-          "min": 20,
-          "max": 120
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "ts_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "ts_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "ts_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
         },
         {
           "id": "ts_verified",
@@ -6454,6 +8125,117 @@
           "label": "عبارة «مشتري موثّق»",
           "description": "على تقييمات المشترين التي أكّدتها سلة.",
           "default": false
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "ts_speed",
+          "type": "number",
+          "format": "integer",
+          "label": "مدة دورة الشريط (ثانية)",
+          "description": "أقل = أسرع. يتوقف مع «تقليل الحركة».",
+          "default": 60,
+          "min": 20,
+          "max": 120
         }
       ]
     },
@@ -6468,6 +8250,13 @@
           "format": "title",
           "label": "صورة بجانب عدّاد حتى وقت الإطلاق، ثم زر الشراء.",
           "value": "صورة بجانب عدّاد حتى وقت الإطلاق، ثم زر الشراء."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "ld_eyebrow",
@@ -6506,51 +8295,6 @@
           "default": "تابع الإصدار الجديد من المتجر.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "ld_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "ld_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "ld_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "ld_image",
@@ -6627,6 +8371,58 @@
           "description": "فارغ = لا زر."
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "ld_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "ld_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "ld_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
           "id": "ld_image_side",
           "type": "items",
           "format": "dropdown-list",
@@ -6643,6 +8439,126 @@
             }
           ],
           "default": "بداية السطر (يمين العربية)"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_btn_shape",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "شكل الزر",
+          "description": "«حسب المتجر»: استدارة الزوايا في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "soft",
+              "label": "دائرية: كبسولة"
+            },
+            {
+              "value": "medium",
+              "label": "مستديرة قليلاً"
+            },
+            {
+              "value": "sharp",
+              "label": "شبه حادّة"
+            }
+          ],
+          "default": "حسب المتجر"
         }
       ]
     },
@@ -6657,6 +8573,13 @@
           "format": "title",
           "label": "أزرار مناسبات، كل مناسبة تصنيف من متجرك.",
           "value": "أزرار مناسبات، كل مناسبة تصنيف من متجرك."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "oc_eyebrow",
@@ -6695,51 +8618,6 @@
           "default": "منتجات مختارة لكل مناسبة.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "oc_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "oc_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "oc_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "oc_items",
@@ -6824,6 +8702,67 @@
           "max": 8
         },
         {
+          "id": "oc_more_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص زر عرض الكل",
+          "description": "يفتح تصنيف المناسبة. فارغ = «عرض الكل».",
+          "maxLength": 30,
+          "multilanguage": true
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "oc_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "oc_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "oc_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
           "id": "oc_banner",
           "type": "boolean",
           "format": "switch",
@@ -6832,13 +8771,98 @@
           "default": true
         },
         {
-          "id": "oc_more_text",
-          "type": "string",
-          "format": "text",
-          "label": "نص زر عرض الكل",
-          "description": "يفتح تصنيف المناسبة. فارغ = «عرض الكل».",
-          "maxLength": 30,
-          "multilanguage": true
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -6853,6 +8877,13 @@
           "format": "title",
           "label": "صورة بنقاط على منتجاتها، وزر يضيفها للسلة.",
           "value": "صورة بنقاط على منتجاتها، وزر يضيفها للسلة."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "lk_eyebrow",
@@ -6891,51 +8922,6 @@
           "default": "منتجات الإطلالة في مكان واحد.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "lk_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "lk_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "lk_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "lk_image",
@@ -7008,10 +8994,55 @@
           "multilanguage": true
         },
         {
-          "id": "lk_preselect",
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "lk_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "lk_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "lk_show_header",
           "type": "boolean",
           "format": "switch",
-          "label": "كل المنتجات مختارة عند ظهور القسم",
+          "label": "العنوان والوصف أعلى القسم",
           "default": true
         },
         {
@@ -7031,6 +9062,114 @@
             }
           ],
           "default": "بداية السطر (يمين العربية)"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "lk_preselect",
+          "type": "boolean",
+          "format": "switch",
+          "label": "كل المنتجات مختارة عند ظهور القسم",
+          "default": true
         }
       ]
     },
@@ -7045,6 +9184,13 @@
           "format": "title",
           "label": "شريط للطول يعطي المقاس من جدولك. بلا جدول لا يظهر.",
           "value": "شريط للطول يعطي المقاس من جدولك. بلا جدول لا يظهر."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "sf_eyebrow",
@@ -7083,51 +9229,6 @@
           "default": "اختر طولك لتعرف مقاسك.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "sf_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "sf_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "sf_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "sf_min",
@@ -7209,6 +9310,152 @@
           "source": "categories",
           "description": "فارغ = كل منتج له مقاس من الجدول.",
           "multi": true
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "sf_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "sf_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "sf_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -7223,6 +9470,13 @@
           "format": "title",
           "label": "مكافآت برنامج الولاء في سلة. بلا برنامج لا يظهر.",
           "value": "مكافآت برنامج الولاء في سلة. بلا برنامج لا يظهر."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "lc_eyebrow",
@@ -7261,51 +9515,6 @@
           "default": "اجمع النقاط واستبدلها بمكافآت.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "lc_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "lc_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "lc_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "lc_source",
@@ -7418,16 +9627,6 @@
           ]
         },
         {
-          "id": "lc_highlight",
-          "type": "number",
-          "format": "integer",
-          "label": "البطاقة المميّزة بإطار",
-          "description": "رقم ترتيبها. 0 = لا بطاقة مميّزة.",
-          "default": 0,
-          "min": 0,
-          "max": 4
-        },
-        {
           "id": "lc_cta",
           "type": "string",
           "format": "text",
@@ -7442,6 +9641,188 @@
           "format": "variable-list",
           "label": "رابط الزر",
           "description": "فارغ = صفحة الولاء في المتجر."
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "lc_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "lc_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "lc_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
+          "id": "lc_highlight",
+          "type": "number",
+          "format": "integer",
+          "label": "البطاقة المميّزة بإطار",
+          "description": "رقم ترتيبها. 0 = لا بطاقة مميّزة.",
+          "default": 0,
+          "min": 0,
+          "max": 4
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_btn_shape",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "شكل الزر",
+          "description": "«حسب المتجر»: استدارة الزوايا في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "soft",
+              "label": "دائرية: كبسولة"
+            },
+            {
+              "value": "medium",
+              "label": "مستديرة قليلاً"
+            },
+            {
+              "value": "sharp",
+              "label": "شبه حادّة"
+            }
+          ],
+          "default": "حسب المتجر"
         }
       ]
     },
@@ -7456,6 +9837,13 @@
           "format": "title",
           "label": "أسئلة بإجابات أ/ب/ج، ثم منتج يناسب الإجابات.",
           "value": "أسئلة بإجابات أ/ب/ج، ثم منتج يناسب الإجابات."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "qz_eyebrow",
@@ -7494,51 +9882,6 @@
           "default": "أسئلة قصيرة تقترح لك منتجاً.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "qz_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "qz_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "qz_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "qz_questions",
@@ -7655,6 +9998,58 @@
           "description": "فارغ = لا نتيجة."
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "qz_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "qz_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "qz_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
           "id": "qz_theme",
           "type": "items",
           "format": "dropdown-list",
@@ -7670,6 +10065,100 @@
             }
           ],
           "default": "صندوق داكن"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -7684,6 +10173,13 @@
           "format": "title",
           "label": "لوحات منتجات تتسع. بأقل من 3 منتجات لا يظهر.",
           "value": "لوحات منتجات تتسع. بأقل من 3 منتجات لا يظهر."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "jv_eyebrow",
@@ -7722,51 +10218,6 @@
           "default": "قطع مختارة من المتجر.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "jv_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "jv_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "jv_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
         },
         {
           "id": "jv_source",
@@ -7860,6 +10311,169 @@
           "max": 6
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "jv_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "jv_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "jv_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
+          "id": "jv_height",
+          "type": "number",
+          "format": "integer",
+          "label": "ارتفاع اللوحات على الحاسوب (بكسل)",
+          "description": "على الجوال: 620.",
+          "default": 440,
+          "min": 320,
+          "max": 600
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
           "id": "jv_trigger",
           "type": "items",
           "format": "dropdown-list",
@@ -7876,16 +10490,6 @@
             }
           ],
           "default": "عند الضغط"
-        },
-        {
-          "id": "jv_height",
-          "type": "number",
-          "format": "integer",
-          "label": "ارتفاع اللوحات على الحاسوب (بكسل)",
-          "description": "على الجوال: 620.",
-          "default": 440,
-          "min": 320,
-          "max": 600
         }
       ]
     },
@@ -7900,6 +10504,13 @@
           "format": "title",
           "label": "صور ترفعها، كل صورة تفتح منتجاً أو حسابك.",
           "value": "صور ترفعها، كل صورة تفتح منتجاً أو حسابك."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "ig_eyebrow",
@@ -7938,6 +10549,55 @@
           "default": "صور من حساب المتجر.",
           "maxLength": 220,
           "multilanguage": true
+        },
+        {
+          "id": "ig_handle",
+          "type": "string",
+          "format": "text",
+          "label": "اسم الحساب",
+          "description": "مثل @store. فارغ = لا يظهر.",
+          "maxLength": 30
+        },
+        {
+          "id": "ig_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الحساب",
+          "description": "يبدأ بـ https://.",
+          "maxLength": 200
+        },
+        {
+          "id": "ig_posts",
+          "type": "collection",
+          "format": "collection",
+          "label": "الصور",
+          "description": "حتى 12. صورة بلا منتج تفتح الحساب.",
+          "default": [],
+          "maxLength": 12,
+          "fields": [
+            {
+              "id": "ig_posts.image",
+              "type": "string",
+              "format": "image",
+              "label": "الصورة",
+              "description": "مربعة 1080×1080."
+            },
+            {
+              "id": "ig_posts.product",
+              "type": "items",
+              "format": "dropdown-list",
+              "label": "المنتج المرتبط",
+              "source": "products",
+              "description": "فارغ = الصورة تفتح الحساب."
+            }
+          ]
+        },
+        {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
         },
         {
           "id": "ig_bg",
@@ -7985,48 +10645,6 @@
           "default": true
         },
         {
-          "id": "ig_handle",
-          "type": "string",
-          "format": "text",
-          "label": "اسم الحساب",
-          "description": "مثل @store. فارغ = لا يظهر.",
-          "maxLength": 30
-        },
-        {
-          "id": "ig_url",
-          "type": "string",
-          "format": "text",
-          "label": "رابط الحساب",
-          "description": "يبدأ بـ https://.",
-          "maxLength": 200
-        },
-        {
-          "id": "ig_posts",
-          "type": "collection",
-          "format": "collection",
-          "label": "الصور",
-          "description": "حتى 12. صورة بلا منتج تفتح الحساب.",
-          "default": [],
-          "maxLength": 12,
-          "fields": [
-            {
-              "id": "ig_posts.image",
-              "type": "string",
-              "format": "image",
-              "label": "الصورة",
-              "description": "مربعة 1080×1080."
-            },
-            {
-              "id": "ig_posts.product",
-              "type": "items",
-              "format": "dropdown-list",
-              "label": "المنتج المرتبط",
-              "source": "products",
-              "description": "فارغ = الصورة تفتح الحساب."
-            }
-          ]
-        },
-        {
           "id": "ig_columns",
           "type": "items",
           "format": "dropdown-list",
@@ -8047,6 +10665,100 @@
             }
           ],
           "default": "6 صور"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
         }
       ]
     },
@@ -8061,6 +10773,39 @@
           "format": "title",
           "label": "العطور من سلة: الأحجام من الخيارات، والنوتات من الوسوم، والهرم من المواصفات.",
           "value": "العطور من سلة: الأحجام من الخيارات، والنوتات من الوسوم، والهرم من المواصفات."
+        },
+        {
+          "id": "pf_layout",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "طريقة العرض",
+          "description": "تعمل بالسحب والأسهم.",
+          "options": [
+            {
+              "value": "table",
+              "label": "طاولة عرض"
+            },
+            {
+              "value": "turntable",
+              "label": "منصّة دوّارة"
+            },
+            {
+              "value": "vitrine",
+              "label": "خزانة زجاجية"
+            },
+            {
+              "value": "pedestal",
+              "label": "قاعدة لعطر واحد"
+            }
+          ],
+          "default": "طاولة عرض"
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "pf_eyebrow",
@@ -8099,56 +10844,6 @@
           "default": "عطور المتجر بنوتاتها وأحجامها.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "pf_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
-        },
-        {
-          "id": "pf_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
-        },
-        {
-          "id": "pf_layout",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "طريقة العرض",
-          "description": "تعمل بالسحب والأسهم.",
-          "options": [
-            {
-              "value": "table",
-              "label": "طاولة عرض"
-            },
-            {
-              "value": "turntable",
-              "label": "منصّة دوّارة"
-            },
-            {
-              "value": "vitrine",
-              "label": "خزانة زجاجية"
-            },
-            {
-              "value": "pedestal",
-              "label": "قاعدة لعطر واحد"
-            }
-          ],
-          "default": "طاولة عرض"
         },
         {
           "id": "pf_source",
@@ -8235,21 +10930,6 @@
           ]
         },
         {
-          "id": "pf_all_link",
-          "type": "boolean",
-          "format": "switch",
-          "label": "رابط «عرض الكل» تحت العطور",
-          "description": "يفتح صفحة التصنيف المختار.",
-          "default": false,
-          "conditions": [
-            {
-              "id": "pf_source",
-              "op": "=",
-              "value": "category"
-            }
-          ]
-        },
-        {
           "id": "pf_products",
           "type": "items",
           "format": "dropdown-list",
@@ -8266,12 +10946,50 @@
           ]
         },
         {
-          "id": "pf_note_filters",
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "pf_show_header",
           "type": "boolean",
           "format": "switch",
-          "label": "تبويبات التصفية بالنوتة",
-          "description": "من وسوم المنتجات، حتى 8.",
+          "label": "العنوان والوصف أعلى القسم",
           "default": true
+        },
+        {
+          "id": "pf_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
+          "id": "pf_all_link",
+          "type": "boolean",
+          "format": "switch",
+          "label": "رابط «عرض الكل» تحت العطور",
+          "description": "يفتح صفحة التصنيف المختار.",
+          "default": false,
+          "conditions": [
+            {
+              "id": "pf_source",
+              "op": "=",
+              "value": "category"
+            }
+          ]
         },
         {
           "id": "pf_show_pyramid",
@@ -8280,49 +10998,6 @@
           "label": "هرم الروائح والثبات تحت المسرح",
           "description": "مواصفات: الافتتاحية، القلب، القاعدة، الثبات.",
           "default": true
-        },
-        {
-          "id": "pf_nav",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "تحريك العطور",
-          "description": "بالضغط: يتقدّم العطر عند الضغط عليه، والأسهم والسحب يعملان. بالتأشير: يتقدّم الذي تحت المؤشر (على الكمبيوتر فقط).",
-          "options": [
-            {
-              "value": "click",
-              "label": "بالضغط"
-            },
-            {
-              "value": "hover",
-              "label": "بالتأشير"
-            }
-          ],
-          "default": "بالضغط",
-          "conditions": [
-            {
-              "id": "pf_layout",
-              "op": "=",
-              "value": "table"
-            }
-          ]
-        },
-        {
-          "id": "pf_click",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "الضغط على العطر البارز يفتح",
-          "description": "غيره يتقدّم إلى الوسط أولاً.",
-          "options": [
-            {
-              "value": "layer",
-              "label": "نافذة المنتج"
-            },
-            {
-              "value": "page",
-              "label": "صفحة المنتج"
-            }
-          ],
-          "default": "نافذة المنتج"
         },
         {
           "id": "pf_cutout",
@@ -8416,37 +11091,6 @@
           "default": "داكنة"
         },
         {
-          "id": "pf_autorotate",
-          "type": "boolean",
-          "format": "switch",
-          "label": "المنصّة تدور وحدها",
-          "description": "تتوقف عند السحب ومرور المؤشر.",
-          "default": true,
-          "conditions": [
-            {
-              "id": "pf_layout",
-              "op": "=",
-              "value": "turntable"
-            }
-          ]
-        },
-        {
-          "id": "pf_rotate_speed",
-          "type": "number",
-          "format": "integer",
-          "label": "سرعة الدوران (1 بطيء، 10 سريع)",
-          "default": 4,
-          "min": 1,
-          "max": 10,
-          "conditions": [
-            {
-              "id": "pf_layout",
-              "op": "=",
-              "value": "turntable"
-            }
-          ]
-        },
-        {
           "id": "pf_turn_mobile_count",
           "type": "number",
           "format": "integer",
@@ -8479,6 +11123,189 @@
               "value": "vitrine"
             }
           ]
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
+        },
+        {
+          "id": "pf_note_filters",
+          "type": "boolean",
+          "format": "switch",
+          "label": "تبويبات التصفية بالنوتة",
+          "description": "من وسوم المنتجات، حتى 8.",
+          "default": true
+        },
+        {
+          "id": "pf_nav",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "تحريك العطور",
+          "description": "بالضغط: يتقدّم العطر عند الضغط عليه، والأسهم والسحب يعملان. بالتأشير: يتقدّم الذي تحت المؤشر (على الكمبيوتر فقط).",
+          "options": [
+            {
+              "value": "click",
+              "label": "بالضغط"
+            },
+            {
+              "value": "hover",
+              "label": "بالتأشير"
+            }
+          ],
+          "default": "بالضغط",
+          "conditions": [
+            {
+              "id": "pf_layout",
+              "op": "=",
+              "value": "table"
+            }
+          ]
+        },
+        {
+          "id": "pf_click",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "الضغط على العطر البارز يفتح",
+          "description": "غيره يتقدّم إلى الوسط أولاً.",
+          "options": [
+            {
+              "value": "layer",
+              "label": "نافذة المنتج"
+            },
+            {
+              "value": "page",
+              "label": "صفحة المنتج"
+            }
+          ],
+          "default": "نافذة المنتج"
+        },
+        {
+          "id": "pf_autorotate",
+          "type": "boolean",
+          "format": "switch",
+          "label": "المنصّة تدور وحدها",
+          "description": "تتوقف عند السحب ومرور المؤشر.",
+          "default": true,
+          "conditions": [
+            {
+              "id": "pf_layout",
+              "op": "=",
+              "value": "turntable"
+            }
+          ]
+        },
+        {
+          "id": "pf_rotate_speed",
+          "type": "number",
+          "format": "integer",
+          "label": "سرعة الدوران (1 بطيء، 10 سريع)",
+          "default": 4,
+          "min": 1,
+          "max": 10,
+          "conditions": [
+            {
+              "id": "pf_layout",
+              "op": "=",
+              "value": "turntable"
+            }
+          ]
         }
       ]
     },
@@ -8493,6 +11320,13 @@
           "format": "title",
           "label": "فروع سلة أو فروع تكتبها، على خريطة المملكة مع ساعات العمل والتواصل.",
           "value": "فروع سلة أو فروع تكتبها، على خريطة المملكة مع ساعات العمل والتواصل."
+        },
+        {
+          "id": "sy_g_content",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المحتوى"
         },
         {
           "id": "br_eyebrow",
@@ -8531,51 +11365,6 @@
           "default": "مواقع الفروع وساعات العمل.",
           "maxLength": 220,
           "multilanguage": true
-        },
-        {
-          "id": "br_show_header",
-          "type": "boolean",
-          "format": "switch",
-          "label": "العنوان والوصف أعلى القسم",
-          "default": true
-        },
-        {
-          "id": "br_bg",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "خلفية القسم",
-          "options": [
-            {
-              "value": "default",
-              "label": "خلفية الصفحة"
-            },
-            {
-              "value": "surface",
-              "label": "لوحة فاتحة بزوايا دائرية"
-            },
-            {
-              "value": "deep",
-              "label": "لوحة داكنة بزوايا دائرية"
-            }
-          ],
-          "default": "خلفية الصفحة"
-        },
-        {
-          "id": "br_spacing",
-          "type": "items",
-          "format": "dropdown-list",
-          "label": "المسافة فوق القسم وتحته",
-          "options": [
-            {
-              "value": "normal",
-              "label": "عادية"
-            },
-            {
-              "value": "compact",
-              "label": "أقل"
-            }
-          ],
-          "default": "عادية"
         },
         {
           "id": "br_source",
@@ -8736,6 +11525,58 @@
           ]
         },
         {
+          "id": "sy_g_look",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "المظهر"
+        },
+        {
+          "id": "br_show_header",
+          "type": "boolean",
+          "format": "switch",
+          "label": "العنوان والوصف أعلى القسم",
+          "default": true
+        },
+        {
+          "id": "br_bg",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "خلفية القسم",
+          "options": [
+            {
+              "value": "default",
+              "label": "خلفية الصفحة"
+            },
+            {
+              "value": "surface",
+              "label": "لوحة فاتحة بزوايا دائرية"
+            },
+            {
+              "value": "deep",
+              "label": "لوحة داكنة بزوايا دائرية"
+            }
+          ],
+          "default": "خلفية الصفحة"
+        },
+        {
+          "id": "br_spacing",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "المسافة فوق القسم وتحته",
+          "options": [
+            {
+              "value": "normal",
+              "label": "عادية"
+            },
+            {
+              "value": "compact",
+              "label": "أقل"
+            }
+          ],
+          "default": "عادية"
+        },
+        {
           "id": "br_show_map",
           "type": "boolean",
           "format": "switch",
@@ -8759,6 +11600,107 @@
             }
           ],
           "default": "أول حرف من اسم المتجر"
+        },
+        {
+          "id": "sy_head_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم العنوان",
+          "description": "«حسب المتجر»: حجم عناوين الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_head_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم العنوان المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 58,
+          "min": 16,
+          "max": 160,
+          "conditions": [
+            {
+              "id": "sy_head_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_text_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم النص",
+          "description": "«حسب المتجر»: حجم نصوص الأقسام في إعدادات الثيم.",
+          "options": [
+            {
+              "value": "store",
+              "label": "حسب المتجر"
+            },
+            {
+              "value": "sm",
+              "label": "صغير"
+            },
+            {
+              "value": "md",
+              "label": "متوسط"
+            },
+            {
+              "value": "lg",
+              "label": "كبير"
+            },
+            {
+              "value": "custom",
+              "label": "مخصص"
+            }
+          ],
+          "default": "حسب المتجر"
+        },
+        {
+          "id": "sy_text_px",
+          "type": "number",
+          "format": "integer",
+          "label": "حجم النص المخصص (بكسل)",
+          "description": "على الحاسوب، ويصغر تلقائياً على الجوال.",
+          "default": 15,
+          "min": 11,
+          "max": 60,
+          "conditions": [
+            {
+              "id": "sy_text_size",
+              "op": "=",
+              "value": "custom"
+            }
+          ]
+        },
+        {
+          "id": "sy_g_motion",
+          "type": "static",
+          "format": "title",
+          "label": "",
+          "value": "الحركة والتفاعل"
         },
         {
           "id": "br_nearest",
