@@ -22,12 +22,13 @@ import data from '../../data/saye.json';
 
 export const settingsCount = data.groups.reduce((n, g) => n + g.settings.length, 0);
 
-{/* TODO(المالك): ضع الروابط الحقيقية بدل # في هذا القسم: متجر المعاينة، وصفحة الثيم في متجر ثيمات سلة، والدعم. */}
+{/* TODO(المالك): الروابط مخفية حتى تصل الحقيقية (متجر المعاينة، وصفحة الثيم في سلة، والدعم). ضع الرابط مكان # وأزل التعليق.
 <nav class="sy-quicklinks not-content" aria-label="روابط الثيم">
   <a href="#" data-todo="demo-store">متجر المعاينة <span aria-hidden="true">↗</span></a>
   <a href="#" data-todo="salla-theme-page">صفحة الثيم في سلة <span aria-hidden="true">↗</span></a>
   <a href="#" data-todo="support">الدعم والتواصل <span aria-hidden="true">↗</span></a>
 </nav>
+*/}
 
 <div class="sy-hero-shot">
   <ImageSlot file="01-home.webp" alt="الصفحة الرئيسية في ثيم ساي بالإعدادات الافتراضية" />
@@ -103,5 +104,5 @@ export const settingsCount = data.groups.reduce((n, g) => n + g.settings.length,
 <footer class="sy-footer not-content">
   <p class="sy-footer-mark" aria-hidden="true">ساي</p>
   <p>ساي ثيم لمتاجر منصة سلة.</p>
-  <p><a href="/saye-docs/docs/start/">التوثيق</a> · <a href="/saye-docs/docs/updates/">جديد التوثيق</a> · <a href="#" data-todo="support">الدعم</a></p>
+  <p><a href="/saye-docs/docs/start/">التوثيق</a> · <a href="/saye-docs/docs/updates/">جديد التوثيق</a>{/* TODO(المالك): رابط الدعم · <a href="#" data-todo="support">الدعم</a> */}</p>
 </footer>
