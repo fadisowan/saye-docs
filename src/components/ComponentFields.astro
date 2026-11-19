@@ -1,0 +1,16 @@
+---
+/** Every field of one home block, in the editor's order. */
+import data from '../data/saye.json';
+import FieldList from './FieldList.astro';
+
+interface Props { path: string }
+const block = data.components.find((c) => c.path === Astro.props.path);
+if (!block) throw new Error(`قسم غير موجود في saye.json: ${Astro.props.path}`);
+const count = block.fields.filter((f) => f.type !== 'static').length;
+---
+<p class="sy-group-meta">
+  <span class="sy-chip">{count} حقلاً</span>
+  <span class="sy-chip sy-chip--quiet">اسمه بالإنجليزية: <bdi>{block.titleEn}</bdi></span>
+  <span class="sy-chip sy-chip--quiet">المسار: <code dir="ltr">{block.path}</code></span>
+</p>
+<FieldList fields={block.fields} />

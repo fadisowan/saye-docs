@@ -1,0 +1,29 @@
+---
+title: "آراء العملاء المكتوبة"
+description: "قسم «آراء العملاء المكتوبة» في الصفحة الرئيسية: حقوله وما يعرضه."
+sidebar:
+  order: 28
+---
+
+import ComponentFields from '../../../components/ComponentFields.astro';
+import ImageSlot from '../../../components/ImageSlot.astro';
+import Later from '../../../components/Later.astro';
+
+**اسمه في المحرّر:** «ساي · آراء العملاء المكتوبة». يُضاف من أقسام الصفحة الرئيسية في محرّر الثيم بلوحة سلة.
+
+## ما يعرضه
+
+<Later>ما يظهر للزائر في هذا القسم، ومن أين تأتي بياناته (الحقول أو منتجات المتجر وتصنيفاته).</Later>
+
+## متى تضيفه
+
+<Later>أنسب مكان له في الصفحة، ومع أي قسم يُستعمل.</Later>
+
+<div class="sy-shots">
+  <ImageSlot file="block-28-custom-testimonials-1440.webp" alt="آراء العملاء المكتوبة: على الحاسوب" />
+  <ImageSlot file="block-28-custom-testimonials-390.webp" alt="آراء العملاء المكتوبة: على الجوال" ratio="9 / 16" />
+</div>
+
+## الحقول بترتيبها في اللوحة
+
+<ComponentFields path="home.custom-testimonials" />

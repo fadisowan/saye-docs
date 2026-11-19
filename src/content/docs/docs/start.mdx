@@ -1,0 +1,46 @@
+---
+title: ابدأ هنا
+description: تثبيت ثيم ساي وتفعيله على متجرك في سلة، ثم ترتيب الإعدادات والصفحة الرئيسية خطوة بخطوة.
+---
+
+import { Steps, LinkCard, CardGrid } from '@astrojs/starlight/components';
+import Later from '../../../components/Later.astro';
+
+ساي ثيم لمتاجر منصة سلة، مبني بـ React. كل ما فيه يُضبط من محرّر الثيم في لوحة متجرك، بلا كتابة أي كود.
+
+## التثبيت والتفعيل
+
+<Steps>
+
+1. **احصل على الثيم** من متجر ثيمات سلة.
+
+   <Later>رابط صفحة الثيم في متجر ثيمات سلة، والسعر أو النسخة التجريبية.</Later>
+
+2. **فعّله على متجرك** من لوحة سلة، في قسم الثيمات.
+
+   <Later>خطوات التفعيل بالصور كما تظهر في لوحة سلة.</Later>
+
+3. **افتح محرّر الثيم** لتبدأ التخصيص. ما تغيّره يظهر في المعاينة، ولا يراه زوارك إلا بعد الحفظ.
+
+</Steps>
+
+## ترتيب العمل المقترح
+
+<Steps>
+
+1. **الهوية أولاً:** [الألوان والوضع الداكن](/saye-docs/settings/01-colors/) ثم [الخطوط واسم المتجر](/saye-docs/settings/02-type/).
+2. **أعلى الصفحة:** [شريط الإعلانات](/saye-docs/settings/03-announcement/) و[الهيدر](/saye-docs/settings/04-header/) و[القائمة](/saye-docs/settings/05-menu/).
+3. **المنتجات:** [بطاقة المنتج](/saye-docs/settings/07-card/) و[صفحة المنتج ونافذته](/saye-docs/settings/08-product/) و[السلة](/saye-docs/settings/10-cart/).
+4. **الصفحة الرئيسية:** أضف الأقسام ورتبها. ابدأ من [الواجهة الرئيسية](/saye-docs/components/01-hero/)، وتصفّح [كل الأقسام](/saye-docs/components/).
+5. **أسفل الصفحة:** [الفوتر](/saye-docs/settings/16-footer/) و[صفحة 404](/saye-docs/settings/17-not-found/).
+
+</Steps>
+
+## قبل أن تبدأ
+
+<Later>ما يُجهَّز في سلة قبل الثيم: الشعار، والقائمة، والتصنيفات وصورها، واللون الأساسي، والخط.</Later>
+
+<CardGrid>
+  <LinkCard title="الإعدادات العامة" description="سبع عشرة مجموعة تنطبق على المتجر كله." href="/saye-docs/settings/" />
+  <LinkCard title="أقسام الصفحة الرئيسية" description="كل قسم بحقوله وشرحها." href="/saye-docs/components/" />
+</CardGrid>

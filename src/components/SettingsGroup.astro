@@ -1,0 +1,14 @@
+---
+/** Every setting of one group in «خيارات التصميم», in the editor's order. */
+import data from '../data/saye.json';
+import FieldList from './FieldList.astro';
+
+interface Props { id: string }
+const group = data.groups.find((g) => g.id === Astro.props.id);
+if (!group) throw new Error(`مجموعة غير موجودة في saye.json: ${Astro.props.id}`);
+---
+<p class="sy-group-meta">
+  <span class="sy-chip">{group.order} من {data.groups.length}</span>
+  {group.scope && <span class="sy-chip sy-chip--quiet">{group.scope}</span>}
+</p>
+<FieldList fields={group.settings} />

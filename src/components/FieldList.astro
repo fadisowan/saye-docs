@@ -1,0 +1,44 @@
+---
+/**
+ * The theme's own settings, straight from src/data/saye.json: name, kind, default, range, hint, options,
+ * and when it shows. Used by the settings pages (group) and the home block pages (fields).
+ */
+import { typeLabel, defaultLabel, rangeLabel, conditionLabel } from '../data/format.mjs';
+
+interface Props {
+  fields: any[];
+  nested?: boolean;
+}
+const { fields, nested = false } = Astro.props;
+const shown = fields;
+---
+<div class:list={['sy-fields', { 'sy-fields--nested': nested }]}>
+  {shown.map((f) =>
+    f.type === 'static' ? (
+      <p class="sy-field-note">{f.value}</p>
+    ) : (
+      <section class="sy-field" id={nested ? undefined : `s-${f.id}`}>
+        <div class="sy-field-head">
+          <h3 class="sy-field-name">{f.label}</h3>
+          <code class="sy-field-id" dir="ltr">{f.id}</code>
+        </div>
+        <ul class="sy-field-meta">
+          <li><span>النوع</span>{typeLabel(f)}</li>
+          {defaultLabel(f) && <li><span>الافتراضي</span>{defaultLabel(f)}</li>}
+          {rangeLabel(f) && <li><span>الحدود</span>{rangeLabel(f)}</li>}
+        </ul>
+        {f.description && <p class="sy-field-desc">{f.description}</p>}
+        {f.options && !f.source && (
+          <p class="sy-field-options"><span>الخيارات:</span> {f.options.map((o: any) => `«${o.label}»`).join('، ')}</p>
+        )}
+        {conditionLabel(f, fields) && <p class="sy-field-when"><span>يظهر في اللوحة حين</span> {conditionLabel(f, fields)}</p>}
+        {f.fields && (
+          <details class="sy-field-children">
+            <summary>حقول كل عنصر ({f.fields.length})</summary>
+            <Astro.self fields={f.fields} nested />
+          </details>
+        )}
+      </section>
+    )
+  )}
+</div>

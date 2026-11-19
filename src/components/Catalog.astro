@@ -1,0 +1,29 @@
+---
+/** Cards for every settings group or every home block, each linking to its page. */
+import data from '../data/saye.json';
+import { groupHref, componentHref } from '../data/slugs.mjs';
+
+interface Props { kind: 'settings' | 'components' }
+const items =
+  Astro.props.kind === 'settings'
+    ? data.groups.map((g) => ({ href: groupHref(g.id), num: g.order, title: g.title, text: g.summary, meta: g.scope }))
+    : data.components.map((c, i) => ({
+        href: componentHref(c.path),
+        num: i + 1,
+        title: c.title.replace(/^ساي · /, ''),
+        text: c.fields.find((f) => f.type === 'static')?.value ?? '',
+        meta: `${c.fields.filter((f) => f.type !== 'static').length} حقلاً`,
+      }));
+---
+<ul class="sy-catalog not-content" role="list">
+  {items.map((item) => (
+    <li>
+      <a class="sy-catalog-card" href={item.href}>
+        <span class="sy-catalog-num" aria-hidden="true">{String(item.num).padStart(2, '0')}</span>
+        <span class="sy-catalog-title">{item.title}</span>
+        {item.text && <span class="sy-catalog-text">{item.text}</span>}
+        <span class="sy-catalog-meta">{item.meta}</span>
+      </a>
+    </li>
+  ))}
+</ul>

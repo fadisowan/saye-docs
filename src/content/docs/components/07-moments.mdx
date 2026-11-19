@@ -1,0 +1,29 @@
+---
+title: "لحظات بصور ومنتجات"
+description: "لحظات بصور، لكل لحظة منتجان للإضافة السريعة."
+sidebar:
+  order: 7
+---
+
+import ComponentFields from '../../../components/ComponentFields.astro';
+import ImageSlot from '../../../components/ImageSlot.astro';
+import Later from '../../../components/Later.astro';
+
+**اسمه في المحرّر:** «ساي · لحظات بصور ومنتجات». يُضاف من أقسام الصفحة الرئيسية في محرّر الثيم بلوحة سلة.
+
+## ما يعرضه
+
+<Later>ما يظهر للزائر في هذا القسم، ومن أين تأتي بياناته (الحقول أو منتجات المتجر وتصنيفاته).</Later>
+
+## متى تضيفه
+
+<Later>أنسب مكان له في الصفحة، ومع أي قسم يُستعمل.</Later>
+
+<div class="sy-shots">
+  <ImageSlot file="block-07-moments-1440.webp" alt="لحظات بصور ومنتجات: على الحاسوب" />
+  <ImageSlot file="block-07-moments-390.webp" alt="لحظات بصور ومنتجات: على الجوال" ratio="9 / 16" />
+</div>
+
+## الحقول بترتيبها في اللوحة
+
+<ComponentFields path="home.saye-moments" />

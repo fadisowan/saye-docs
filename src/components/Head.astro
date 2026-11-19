@@ -1,0 +1,57 @@
+---
+import DefaultHead from '@astrojs/starlight/components/Head.astro';
+---
+<DefaultHead {...Astro.props} />
+<script>
+  // Lightbox: any screenshot inside the page content opens larger in a <dialog>.
+  let trigger: HTMLImageElement | undefined;
+  let previousOverflow = '';
+
+  function getDialog(): HTMLDialogElement {
+    const existing = document.querySelector<HTMLDialogElement>('#sy-image-dialog');
+    if (existing) return existing;
+    const dialog = document.createElement('dialog');
+    dialog.id = 'sy-image-dialog';
+    dialog.setAttribute('aria-labelledby', 'sy-preview-title');
+    dialog.innerHTML = '<header class="image-dialog-header"><div><span class="image-dialog-eyebrow">معاينة الصورة</span><h2 id="sy-preview-title"></h2></div><button type="button" aria-label="إغلاق الصورة">إغلاق <span aria-hidden="true">×</span></button></header><div class="image-dialog-stage"><img alt="" /></div><footer class="image-dialog-footer"><span>اضغط خارج النافذة أو Escape للإغلاق</span><a target="_blank" rel="noopener noreferrer">فتح الصورة الأصلية ↗</a></footer>';
+    document.body.append(dialog);
+    dialog.querySelector('button')!.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => {
+      document.documentElement.style.overflow = previousOverflow;
+      trigger?.focus({ preventScroll: true });
+    });
+    return dialog;
+  }
+
+  function setupImages() {
+    document.querySelectorAll<HTMLImageElement>('.sl-markdown-content img').forEach((image) => {
+      if (image.closest('a') || image.dataset.syZoom) return;
+      image.dataset.syZoom = '1';
+      image.tabIndex = 0;
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', 'تكبير: ' + image.alt);
+      const open = () => {
+        const dialog = getDialog();
+        const preview = dialog.querySelector('img')!;
+        const source = image.currentSrc || image.src;
+        trigger = image;
+        previousOverflow = document.documentElement.style.overflow;
+        preview.src = source;
+        preview.alt = image.alt;
+        dialog.querySelector('h2')!.textContent = image.alt || 'الصورة بحجم أكبر';
+        dialog.querySelector('a')!.href = source;
+        dialog.showModal();
+        document.documentElement.style.overflow = 'hidden';
+        dialog.querySelector('button')!.focus();
+      };
+      image.addEventListener('click', open);
+      image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); }
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', setupImages);
+  setupImages();
+</script>

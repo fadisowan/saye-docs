@@ -1,0 +1,29 @@
+---
+title: "تسوّق الإطلالة"
+description: "صورة بنقاط على منتجاتها، وزر يضيفها للسلة."
+sidebar:
+  order: 19
+---
+
+import ComponentFields from '../../../components/ComponentFields.astro';
+import ImageSlot from '../../../components/ImageSlot.astro';
+import Later from '../../../components/Later.astro';
+
+**اسمه في المحرّر:** «ساي · تسوّق الإطلالة». يُضاف من أقسام الصفحة الرئيسية في محرّر الثيم بلوحة سلة.
+
+## ما يعرضه
+
+<Later>ما يظهر للزائر في هذا القسم، ومن أين تأتي بياناته (الحقول أو منتجات المتجر وتصنيفاته).</Later>
+
+## متى تضيفه
+
+<Later>أنسب مكان له في الصفحة، ومع أي قسم يُستعمل.</Later>
+
+<div class="sy-shots">
+  <ImageSlot file="block-19-shop-the-look-1440.webp" alt="تسوّق الإطلالة: على الحاسوب" />
+  <ImageSlot file="block-19-shop-the-look-390.webp" alt="تسوّق الإطلالة: على الجوال" ratio="9 / 16" />
+</div>
+
+## الحقول بترتيبها في اللوحة
+
+<ComponentFields path="home.saye-shop-the-look" />

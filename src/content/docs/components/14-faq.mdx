@@ -1,0 +1,29 @@
+---
+title: "الأسئلة الشائعة"
+description: "أسئلة وأجوبة تُفتح واحداً واحداً. سؤال بلا جواب لا يظهر."
+sidebar:
+  order: 14
+---
+
+import ComponentFields from '../../../components/ComponentFields.astro';
+import ImageSlot from '../../../components/ImageSlot.astro';
+import Later from '../../../components/Later.astro';
+
+**اسمه في المحرّر:** «ساي · الأسئلة الشائعة». يُضاف من أقسام الصفحة الرئيسية في محرّر الثيم بلوحة سلة.
+
+## ما يعرضه
+
+<Later>ما يظهر للزائر في هذا القسم، ومن أين تأتي بياناته (الحقول أو منتجات المتجر وتصنيفاته).</Later>
+
+## متى تضيفه
+
+<Later>أنسب مكان له في الصفحة، ومع أي قسم يُستعمل.</Later>
+
+<div class="sy-shots">
+  <ImageSlot file="block-14-faq-1440.webp" alt="الأسئلة الشائعة: على الحاسوب" />
+  <ImageSlot file="block-14-faq-390.webp" alt="الأسئلة الشائعة: على الجوال" ratio="9 / 16" />
+</div>
+
+## الحقول بترتيبها في اللوحة
+
+<ComponentFields path="home.saye-faq" />

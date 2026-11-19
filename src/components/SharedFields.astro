@@ -1,0 +1,32 @@
+---
+/** Fields that more than one home block has under the same id, with the blocks that have them. */
+import data from '../data/saye.json';
+import { componentHref } from '../data/slugs.mjs';
+import { typeLabel } from '../data/format.mjs';
+
+const map = new Map<string, { field: any; blocks: { title: string; href: string }[] }>();
+for (const c of data.components) {
+  for (const f of c.fields) {
+    if (f.type === 'static') continue;
+    const entry = map.get(f.id) ?? { field: f, blocks: [] };
+    entry.blocks.push({ title: c.title.replace(/^ساي · /, ''), href: componentHref(c.path) });
+    map.set(f.id, entry);
+  }
+}
+const shared = [...map.values()].filter((e) => e.blocks.length > 1).sort((a, b) => b.blocks.length - a.blocks.length);
+---
+<div class="sy-fields">
+  {shared.map(({ field, blocks }) => (
+    <section class="sy-field">
+      <div class="sy-field-head">
+        <h3 class="sy-field-name">{field.label}</h3>
+        <code class="sy-field-id" dir="ltr">{field.id}</code>
+      </div>
+      <ul class="sy-field-meta">
+        <li><span>النوع</span>{typeLabel(field)}</li>
+        <li><span>في</span>{blocks.length} أقسام</li>
+      </ul>
+      <p class="sy-field-options"><span>الأقسام:</span> {blocks.map((b, i) => <>{i > 0 && '، '}<a href={b.href}>{b.title}</a></>)}</p>
+    </section>
+  ))}
+</div>

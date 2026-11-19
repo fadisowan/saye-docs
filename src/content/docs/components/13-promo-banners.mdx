@@ -1,0 +1,29 @@
+---
+title: "بنرات ترويجية"
+description: "حتى 3 بنرات بصور. بنر بلا صورة لا يظهر."
+sidebar:
+  order: 13
+---
+
+import ComponentFields from '../../../components/ComponentFields.astro';
+import ImageSlot from '../../../components/ImageSlot.astro';
+import Later from '../../../components/Later.astro';
+
+**اسمه في المحرّر:** «ساي · بنرات ترويجية». يُضاف من أقسام الصفحة الرئيسية في محرّر الثيم بلوحة سلة.
+
+## ما يعرضه
+
+<Later>ما يظهر للزائر في هذا القسم، ومن أين تأتي بياناته (الحقول أو منتجات المتجر وتصنيفاته).</Later>
+
+## متى تضيفه
+
+<Later>أنسب مكان له في الصفحة، ومع أي قسم يُستعمل.</Later>
+
+<div class="sy-shots">
+  <ImageSlot file="block-13-promo-banners-1440.webp" alt="بنرات ترويجية: على الحاسوب" />
+  <ImageSlot file="block-13-promo-banners-390.webp" alt="بنرات ترويجية: على الجوال" ratio="9 / 16" />
+</div>
+
+## الحقول بترتيبها في اللوحة
+
+<ComponentFields path="home.saye-promo-banners" />

@@ -1,0 +1,29 @@
+---
+/**
+ * A screenshot that may not exist yet. Pass the file name expected in src/assets/previews/
+ * (for example "01-home.webp"). When the file is there it is optimised and shown; when it is
+ * missing, an empty frame of the same shape names the file, so the page still reads and the
+ * build still passes. The full list of expected files is in images-todo.md.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  file: string;
+  alt: string;
+  ratio?: string;
+}
+const { file, alt, ratio = '16 / 10' } = Astro.props;
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/previews/*.{webp,png,jpg,jpeg}', { eager: true });
+const found = files[`../assets/previews/${file}`]?.default;
+---
+<figure class="image-slot" style={`--slot-ratio: ${ratio}`}>
+  {found ? (
+    <Image src={found} alt={alt} widths={[480, 800, 1200]} sizes="(max-width: 50rem) 100vw, 40rem" />
+  ) : (
+    <div class="image-slot-empty" role="img" aria-label={`${alt} (الصورة تُضاف لاحقاً)`}>
+      <span aria-hidden="true">الصورة تُضاف لاحقاً</span>
+      <code aria-hidden="true">{file}</code>
+    </div>
+  )}
+</figure>
