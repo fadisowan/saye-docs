@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fadisowan.github.io/saye-docs/sitemap-index.xml

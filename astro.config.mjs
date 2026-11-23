@@ -23,9 +23,14 @@ const blockItem = (c) => ({ label: shortTitle(c), slug: `components/${componentS
 const sayeBlocks = data.components.filter((c) => c.path.startsWith('home.saye-') || c.path === 'home.brands' || c.path === 'home.custom-testimonials');
 const sallaBlocks = data.components.filter((c) => !sayeBlocks.includes(c));
 
+const site = 'https://fadisowan.github.io';
+const base = '/saye-docs';
+const shareImage = `${site}${base}/og-saye.jpg`;
+const shareAlt = 'ثيم ساي على سلة: الواجهة الرئيسية في الوضع الداكن على حاسوب وجوال';
+
 export default defineConfig({
-  site: 'https://fadisowan.github.io',
-  base: '/saye-docs',
+  site,
+  base,
   trailingSlash: 'always',
   redirects: Object.fromEntries(Object.entries(movedPages).map(([from, to]) => [`/${from}/`, `/saye-docs/${to}/`])),
   integrations: [
@@ -33,6 +38,15 @@ export default defineConfig({
       title: 'دليل ساي',
       description: 'التوثيق العربي لثيم «ساي» على منصة سلة: الإعدادات العامة، وأقسام الصفحة الرئيسية، وأشكال البطاقة.',
       favicon: '/favicon.svg',
+      // One share picture for every page (1200×630): the home page on a laptop and a phone, from the theme's listing shots.
+      head: [
+        { tag: 'meta', attrs: { property: 'og:image', content: shareImage } },
+        { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
+        { tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
+        { tag: 'meta', attrs: { property: 'og:image:alt', content: shareAlt } },
+        { tag: 'meta', attrs: { name: 'twitter:image', content: shareImage } },
+        { tag: 'meta', attrs: { name: 'twitter:image:alt', content: shareAlt } },
+      ],
       defaultLocale: 'root',
       locales: { root: { label: 'العربية', lang: 'ar', dir: 'rtl' } },
       customCss: ['./src/styles/custom.css'],
@@ -81,7 +95,7 @@ export default defineConfig({
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
       pagination: true,
       lastUpdated: false,
-      disable404Route: true,
+      disable404Route: false,
     }),
   ],
 });

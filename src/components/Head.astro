@@ -1,5 +1,13 @@
 ---
 import DefaultHead from '@astrojs/starlight/components/Head.astro';
+
+// The not-found page is served as 404.html for any wrong address: it has no address of its own to name
+// (Starlight's canonical and og:url point to /404/, which does not exist), and it should not be indexed.
+const route = Astro.locals.starlightRoute;
+if (route.entry.id === '404') {
+  route.head = route.head.filter(({ tag, attrs }) => !(tag === 'link' && attrs?.rel === 'canonical') && !(tag === 'meta' && attrs?.property === 'og:url'));
+  route.head.push({ tag: 'meta', attrs: { name: 'robots', content: 'noindex' }, content: '' });
+}
 ---
 <DefaultHead {...Astro.props} />
 <script>

@@ -18,6 +18,11 @@ for (const page of pages) {
   if (!fs.existsSync(path.join(dist, page, 'index.html'))) problems.push(`صفحة ناقصة: ${page || '/'}`);
 }
 
+// GitHub Pages serves only <root>/404.html for a wrong address; without it the visitor gets GitHub's English page.
+const notFound = path.join(dist, '404.html');
+if (!fs.existsSync(notFound)) problems.push('صفحة ناقصة: 404.html (صفحة الرابط الخاطئ)');
+else if (!/<html[^>]*lang="ar"/.test(fs.readFileSync(notFound, 'utf8'))) problems.push('404.html ليست صفحة الدليل العربية');
+
 const htmlFiles = [];
 (function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
