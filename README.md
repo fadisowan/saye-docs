@@ -2,7 +2,7 @@
 
 موقع التوثيق العربي لثيم «ساي / SAYE» على منصة سلة. مبني بـ Astro Starlight (نفس أدوات «دليل كوتش» و«دليل لازورا»)، عربي من اليمين لليسار، وجاهز للنشر على GitHub Pages في:
 
-`https://fadisowan.github.io/saye-docs/` (لم يُنشر بعد)
+`https://fadisowan.github.io/saye-docs/` (يُنشر تلقائياً مع كل دفع إلى main)
 
 ## البنية
 
@@ -18,7 +18,8 @@ src/components/                  قوائم الإعدادات والحقول، 
 src/styles/custom.css            هوية ساي: ألوان _tokens.scss في الفاتح والداكن، وخطوط التصميم، والحواف
 scripts/sync-twilight.mjs        يقرأ twilight.json الثيم ويكتب src/data/saye.json
 scripts/check-contrast.mjs       يفحص تباين كل زوج نص وخلفية (AA)
-scripts/validate-build.mjs       بعد البناء: الصفحات موجودة ولا روابط داخلية مكسورة
+scripts/validate-build.mjs       بعد البناء: الصفحات و404.html العربية موجودة، ولا روابط داخلية مكسورة
+public/                          الأيقونة، وصورة المشاركة og-saye.jpg (1200×630)، وrobots.txt
 images-todo.md                   الصور المنتظرة بأسمائها
 .github/workflows/pages.yml      البناء والنشر على GitHub Pages مع كل دفع إلى main
 ```
@@ -46,5 +47,4 @@ npm run preview    # http://127.0.0.1:5395/saye-docs/
 ## ما بقي
 
 - روابط حقيقية بدل `#` في `src/content/docs/index.mdx` (متجر المعاينة، وصفحة الثيم في سلة، والدعم)، وكلها معلَّمة بـ `TODO` و`data-todo`.
-- الصور (`images-todo.md`)، وجوابا الدعم والتحديثات في الأسئلة، ورقم إصدار الثيم في «جديد التوثيق».
-- إنشاء المستودع على GitHub وتفعيل Pages (لم يُنشأ).
+- جوابا الدعم والتحديثات في الأسئلة، ورقم إصدار الثيم في «جديد التوثيق» (فقرات «يُكمل لاحقاً»).
