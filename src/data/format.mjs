@@ -20,6 +20,8 @@ export function typeLabel(f) {
 
 export function defaultLabel(f) {
   if (f.type === 'boolean') return f.default ? 'مفعّل' : 'مطفأ';
+  if (f.defaultCount) return f.defaultCount === 1 ? 'عنصر واحد جاهز' : f.defaultCount === 2 ? 'عنصران جاهزان' : `${f.defaultCount} عناصر جاهزة`;
+  if (typeof f.default === 'object') return null;
   if (f.default === undefined || f.default === '') return null;
   return String(f.default);
 }

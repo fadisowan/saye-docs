@@ -411,3 +411,6 @@ site-search button[data-open-modal] { min-width: 44px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* The editor panel shot: narrow and tall, beside the text width */
+.sy-panel-shot { max-width: 22rem; }

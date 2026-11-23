@@ -1,11 +1,11 @@
 ---
 title: دليل ثيم ساي
-description: ساي ثيم لمتاجر سلة مبني بـ React، بتصميم هادئ وتحريري، ووضع فاتح وداكن، وأقسام للصفحة الرئيسية يضبطها التاجر من لوحة التحكم.
+description: ساي ثيم لمتاجر سلة مبني بـ React، بتصميم هادئ وفاخر، ووضع فاتح وداكن، وتسعة وثلاثين قسماً للصفحة الرئيسية يضبطها التاجر من لوحة التحكم.
 template: splash
 editUrl: false
 hero:
   title: ساي، متجرك بهدوء التفاصيل.
-  tagline: دليل عربي لثيم ساي على منصة سلة. التثبيت، والإعدادات العامة، وأقسام الصفحة الرئيسية، كلها تُضبط من محرّر الثيم في لوحة متجرك بلا أي كود.
+  tagline: دليل عربي لثيم ساي على منصة سلة. الإعدادات العامة، وأقسام الصفحة الرئيسية، وأشكال البطاقة، كلها تُضبط من محرّر الثيم في لوحة متجرك بلا أي كود.
   actions:
     - text: ابدأ هنا
       link: /saye-docs/docs/start/
@@ -30,8 +30,79 @@ export const settingsCount = data.groups.reduce((n, g) => n + g.settings.length,
 </nav>
 */}
 
-<div class="sy-hero-shot">
-  <ImageSlot file="01-home.webp" alt="الصفحة الرئيسية في ثيم ساي بالإعدادات الافتراضية" />
+<ul class="sy-stats not-content" role="list">
+  <li><strong>{data.components.length}</strong><span>قسماً للرئيسية</span></li>
+  <li><strong>{data.groups.length}</strong><span>مجموعة إعدادات</span></li>
+  <li><strong>{settingsCount}</strong><span>إعداداً عاماً</span></li>
+  <li><strong>8</strong><span>أشكال للبطاقة</span></li>
+</ul>
+
+<p class="sy-eyebrow"><span lang="en" dir="ltr">Inside</span>ما في الثيم</p>
+
+## المزايا الأساسية
+
+<div class="sy-features">
+
+<section class="sy-feature">
+  <ImageSlot file="feature-01.webp" alt="واجهة ساي متعددة الشرائح على الحاسوب والجوال" ratio="4 / 3" />
+  <div class="sy-feature-text">
+    <span class="sy-feature-num" aria-hidden="true">01</span>
+    <h3>ساي… فخامة تليق بمتجرك</h3>
+    <p>واجهة فاخرة بهيرو متعدد الشرائح، تمنح أزياءك وعطورك حضوراً لافتاً على الحاسوب والجوال.</p>
+    <a href="/saye-docs/components/01-hero/">الواجهة الرئيسية ←</a>
+  </div>
+</section>
+
+<section class="sy-feature">
+  <ImageSlot file="feature-02.webp" alt="رف العبايات وخزانة العطور وخزانة الإكسسوارات" ratio="4 / 3" />
+  <div class="sy-feature-text">
+    <span class="sy-feature-num" aria-hidden="true">02</span>
+    <h3>رفوف وخزائن تفاعلية</h3>
+    <p>رف عبايات يُسحب، وعلّاقات بخيارات القطعة، وخزانة عطور زجاجية، وخزانة إكسسوارات خشبية.</p>
+    <a href="/saye-docs/components/06-rail/">رف منتجات يُسحب ←</a>
+  </div>
+</section>
+
+<section class="sy-feature">
+  <ImageSlot file="feature-03.webp" alt="منصّة الإطلالات وتسوّق الإطلالة وغرفة القياس والاختبار" ratio="4 / 3" />
+  <div class="sy-feature-text">
+    <span class="sy-feature-num" aria-hidden="true">03</span>
+    <h3>إطلالات كاملة وغرفة قياس</h3>
+    <p>منصّة إطلالات، وتسوّق من الصورة، وغرفة قياس، واختبار يقترح القطعة المناسبة لعميلك.</p>
+    <a href="/saye-docs/components/28-looks/">منصّة الإطلالات ←</a>
+  </div>
+</section>
+
+<section class="sy-feature">
+  <ImageSlot file="feature-04.webp" alt="أشكال بطاقة المنتج الثمانية" ratio="4 / 3" />
+  <div class="sy-feature-text">
+    <span class="sy-feature-num" aria-hidden="true">04</span>
+    <h3>ثمانية أشكال لبطاقة المنتج</h3>
+    <p>اختر شكل البطاقة لكل قسم: خيارات ظاهرة، أو عند المرور، أو شريط إضافة، أو إطار القوس.</p>
+    <a href="/saye-docs/docs/card-styles/">أشكال بطاقة المنتج ←</a>
+  </div>
+</section>
+
+<section class="sy-feature">
+  <ImageSlot file="feature-05.webp" alt="صفحة تصنيف وتفاصيل المنتج والسلة الجانبية" ratio="4 / 3" />
+  <div class="sy-feature-text">
+    <span class="sy-feature-num" aria-hidden="true">05</span>
+    <h3>من التصنيف إلى السلة بسلاسة</h3>
+    <p>صفحة تصنيف بفلاتر، وتفاصيل المنتج تُفتح بألوانه ومقاساته، وسلة جانبية تحفظ اختيارات العميل.</p>
+    <a href="/saye-docs/settings/09-navigation/">فتح المنتج والتصنيف ←</a>
+  </div>
+</section>
+
+<section class="sy-feature">
+  <ImageSlot file="feature-06.webp" alt="أقسام من الصفحة الرئيسية على الجوال" ratio="4 / 3" />
+  <div class="sy-feature-text">
+    <span class="sy-feature-num" aria-hidden="true">06</span>
+    <h3>39 قسماً تبني بها متجرك</h3>
+    <p>قصص ولحظات ومجلة وإطلاق منتج وماركات وأسئلة شائعة ومزايا، وكلها قابلة للتخصيص.</p>
+    <a href="/saye-docs/components/">كل الأقسام ←</a>
+  </div>
+</section>
+
 </div>
 
 <p class="sy-eyebrow"><span lang="en" dir="ltr">The guide</span>الدليل</p>
@@ -40,49 +111,24 @@ export const settingsCount = data.groups.reduce((n, g) => n + g.settings.length,
 
 <CardGrid>
   <Card title="اضبط هوية متجرك" icon="pencil">
-    الألوان والوضع الداكن، والخطوط واسم المتجر، والهيدر والقائمة والفوتر. {data.groups.length} مجموعة و{settingsCount} إعداداً تنطبق على المتجر كله.
+    الألوان والوضع الداكن، والخطوط، والشعار، والهيدر والقائمة والفوتر. {data.groups.length} مجموعة و{settingsCount} إعداداً تنطبق على المتجر كله.
 
     [استعرض الإعدادات العامة ←](/saye-docs/settings/)
   </Card>
   <Card title="كوّن صفحتك الرئيسية" icon="puzzle">
-    {data.components.length} قسماً: واجهة بأربعة أشكال، ورف منتجات يُسحب، وقصص بالفيديو، ومقالات، وعروض بعدّاد، وغيرها.
+    {data.components.length} قسماً، لكل قسم صفحة بأشكاله وأهم حقوله ونصائح، وترتيب مقترح للبداية.
 
     [تصفّح أقسام الرئيسية ←](/saye-docs/components/)
   </Card>
   <Card title="حقول مشتركة تُشرح مرة" icon="list-format">
-    العنوان والكلمة المائلة وطريقة العرض ومصدر المنتجات تتكرر في أقسام كثيرة وتعمل بالطريقة نفسها.
+    العنوان والكلمة المائلة ومصدر المنتجات والخلفية والأحجام تتكرر في أقسام كثيرة وتعمل بالطريقة نفسها.
 
     [الخيارات المشتركة ←](/saye-docs/docs/shared/)
   </Card>
   <Card title="اعثر على الإعداد بسرعة" icon="magnifier">
     ابحث بالعربية أو بمعرّف الإعداد من شريط البحث أعلى الصفحة، واستعمل فهرس الصفحة للوصول إلى ما تحتاجه.
 
-    [مثال: إعدادات الهيدر ←](/saye-docs/settings/04-header/)
-  </Card>
-</CardGrid>
-
-<p class="sy-eyebrow"><span lang="en" dir="ltr">Inside</span>ما في الثيم</p>
-
-## المزايا الأساسية
-
-<CardGrid>
-  <Card title="فاتح وداكن" icon="moon">
-    وضع المتجر عند أول زيارة، وزر تبديل للزائر يُحفظ اختياره في متصفحه.
-  </Card>
-  <Card title="ألوانك أو ألوان ساي" icon="seti:pipeline">
-    لوحتان جاهزتان أو ألوانك الخاصة، ولون التمييز من ألوان الثيم أو من لون متجرك في سلة.
-  </Card>
-  <Card title="ثلاثة أشكال للهيدر وأربعة للواجهة" icon="laptop">
-    شريط أو كبسولة عائمة أو أتيليه بقائمة كبيرة، وواجهة بصورة كاملة أو مقسومة أو أقواس أو لوحات.
-  </Card>
-  <Card title="المنتج فوق الصفحة" icon="open-book">
-    المنتج والتصنيف يُفتحان فوق الصفحة الحالية أو في صفحتهما، حسب اختيارك.
-  </Card>
-  <Card title="عربي أولاً" icon="translate">
-    من اليمين لليسار أولاً، ولكل نص تكتبه في الأقسام خانة عربية وخانة إنجليزية.
-  </Card>
-  <Card title="حركة تحترم الزائر" icon="setting">
-    تتوقف مع «تقليل الحركة» في الجهاز، والتأثيرات الثقيلة للحاسوب فقط ومطفأة افتراضياً.
+    [مثال: إعدادات الهيدر ←](/saye-docs/settings/05-header/)
   </Card>
 </CardGrid>
 
@@ -91,14 +137,14 @@ export const settingsCount = data.groups.reduce((n, g) => n + g.settings.length,
 ## روابط تساعدك على البداية
 
 <CardGrid>
-  <LinkCard title="الواجهة الرئيسية" description="أول قسم في الصفحة بأربعة أشكال وشرائح." href="/saye-docs/components/01-hero/" />
-  <LinkCard title="بطاقة المنتج" description="شكل البطاقة وما يظهر عليها في المتجر كله." href="/saye-docs/settings/07-card/" />
-  <LinkCard title="السلة والإضافة" description="السلة الجانبية وحركة الإضافة والمقترحات." href="/saye-docs/settings/10-cart/" />
+  <LinkCard title="ابدأ هنا" description="الخطوات الأولى وترتيب مقترح للرئيسية." href="/saye-docs/docs/start/" />
+  <LinkCard title="الشعار" description="نسخة للفاتح ونسخة للداكن، أو اسم المتجر بخط الزينة." href="/saye-docs/docs/logo/" />
+  <LinkCard title="أشكال بطاقة المنتج" description="الأشكال الثمانية، وأين تختار كل واحد." href="/saye-docs/docs/card-styles/" />
   <LinkCard title="الأسئلة الشائعة" description="أجوبة قصيرة قبل أن تبدأ." href="/saye-docs/docs/faq/" />
 </CardGrid>
 
 <Aside type="note" title="عن هذا الدليل">
-  أسماء الإعدادات والأقسام وقيمها الافتراضية مأخوذة من ملف إعدادات الثيم نفسه، فتطابق ما تراه في المحرّر. الشرح التفصيلي والصور تُضاف تباعاً: راجع [حالة الصور](/saye-docs/docs/preview-status/) و[جديد التوثيق](/saye-docs/docs/updates/).
+  أسماء الإعدادات والأقسام وقيمها الافتراضية مأخوذة من ملف إعدادات الثيم نفسه، فتطابق ما تراه في المحرّر. الصور تُضاف تباعاً: راجع [حالة الصور](/saye-docs/docs/preview-status/) و[جديد التوثيق](/saye-docs/docs/updates/).
 </Aside>
 
 <footer class="sy-footer not-content">

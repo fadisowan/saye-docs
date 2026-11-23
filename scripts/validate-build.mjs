@@ -2,14 +2,15 @@
 // points to a file in dist/. Run after `npm run build`.
 import fs from 'node:fs';
 import path from 'node:path';
-import { groupSlugs, componentSlugs } from '../src/data/slugs.mjs';
+import { groupSlugs, componentSlugs, movedPages } from '../src/data/slugs.mjs';
 
 const dist = new URL('../dist/', import.meta.url).pathname;
 const base = '/saye-docs/';
 const pages = [
-  '', 'docs/start/', 'docs/shared/', 'docs/faq/', 'docs/updates/', 'docs/preview-status/',
+  '', 'docs/start/', 'docs/logo/', 'docs/card-styles/', 'docs/shared/', 'docs/faq/', 'docs/updates/', 'docs/preview-status/',
   'settings/', ...Object.values(groupSlugs).map((s) => `settings/${s}/`),
   'components/', ...Object.values(componentSlugs).map((s) => `components/${s}/`),
+  ...Object.keys(movedPages).map((s) => `${s}/`),
 ];
 const problems = [];
 

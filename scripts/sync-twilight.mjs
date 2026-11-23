@@ -1,5 +1,5 @@
 // Reads the theme's twilight.json (read-only) and writes a trimmed, normalised copy to src/data/saye.json:
-// the 17 settings groups with their settings, and the home blocks with their fields.
+// the settings groups with their settings (22 today), and the home blocks with their fields (39 today).
 // The docs pages render their settings lists from that file, so the names, defaults and hints
 // stay the theme's own. Run again after the theme changes:  npm run sync [-- path/to/twilight.json]
 import fs from 'node:fs';
@@ -25,6 +25,8 @@ function field(f) {
   if (f.description) item.description = ar(f.description);
   if (f.options?.length) item.options = f.options.map((o) => ({ value: o.value, label: ar(o.label) }));
   if (f.type === 'boolean') item.default = Boolean(f.value ?? f.selected);
+  else if (f.type === 'collection') { if (Array.isArray(f.value) && f.value.length) item.defaultCount = f.value.length; }
+  else if (Array.isArray(f.value) && !f.value.length) { /* an empty list: no default */ }
   else if (f.type === 'items' && f.selected?.length && !item.source) item.default = f.selected.map((o) => ar(o.label)).join('، ');
   else if (f.value !== undefined && f.value !== null && f.value !== '' && f.type !== 'static') item.default = ar(f.value);
   if (f.minimum !== undefined) item.min = f.minimum;
