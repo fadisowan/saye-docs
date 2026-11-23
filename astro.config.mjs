@@ -81,7 +81,7 @@ export default defineConfig({
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
       pagination: true,
       lastUpdated: false,
-      disable404Route: true,
+      disable404Route: false,
     }),
   ],
 });
